@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REST Countries API with color theme switcher</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <main class="main text-sm">
+      <div class="dark:bg-[#2b3743] shadow-2xl">
+        <div
+          class="container mx-auto max-w-screen-2xl py-8 px-3 flex justify-between dark:text-white"
+        >
+          <h1 class="text-base font-bold">Where in the world?</h1>
+          <button class="toggle-mode flex items-center">
+            <img
+              src="./src/moon-regular.svg"
+              alt="svg"
+              class="mode-svg w-4 mr-3"
+            />
+            Toggle Dark
+          </button>
+        </div>
+      </div>
+      <div
+        class="bg-[#fafafa] relative min-h-[calc(100vh_-_88px)] overflow-hidden dark:bg-[#202d36]"
+      >
+        <div
+          class="container mx-auto max-w-screen-2xl px-3 py-8 dark:text-white"
+        >
+          <div class="item">
+            <div class="flex justify-between mb-7">
+              <div class="flex items-center gap-5">
+                <div class="relative">
+                  <input
+                    type="text"
+                    class="search bg-white shadow-lg block py-3 pl-8 pr-2 dark:bg-[#2b3843] outline-0 dark:text-white"
+                    placeholder="Search for a country..."
+                  />
+                  <img
+                    src="./src/search.svg"
+                    alt="search"
+                    class="search-svg w-4 absolute top-1/2 -translate-y-2/4 left-2"
+                  />
+                </div>
+                <button class="clear">Clear</button>
+              </div>
+              <select
+                class="region py-3 px-2 dark:bg-[#2b3843] dark:text-white"
+              >
+                <option value="All">All</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Europe">Europe</option>
+                <option value="Asia">Asia</option>
+                <option value="Oceania">Oceania</option>
+              </select>
+            </div>
+            <div
+              class="cards grid justify-center lg:grid-cols-4 lg:gap-10"
+            ></div>
+            <ul class="pagination w-fit mx-auto flex flex-wrap gap-2"></ul>
+          </div>
+        </div>
+        <div
+          class="current-page-container absolute top-0 right-0 bottom-0 left-0 hidden dark:text-white"
+        >
+          <div class="container mx-auto max-w-screen-2xl px-3 py-8 h-full">
+            <button
+              class="back py-2 px-3 border-2 border-solid rounded-lg flex mb-2 lg:mb-0"
+            >
+              <img
+                src="./src/arrow-left.svg"
+                alt="back-svg"
+                class="back-svg w-4 mr-4"
+              />
+              back
+            </button>
+            <div
+              class="current-page flex flex-col lg:flex-row justify-center items-center gap-10 h-full"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <script src="./src/index.js" type="module"></script>
+  </body>
+</html>
